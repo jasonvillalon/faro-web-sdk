@@ -15,18 +15,18 @@ export abstract class BaseExtension implements Extension {
   metas = {} as Metas;
 
   logDebug(...args: unknown[]): void {
-    this.internalLogger.debug(`${this.name}\n`, ...args);
+    this.internalLogger.debug(`${this.name}\n`, JSON.stringify(args));
   }
 
   logInfo(...args: unknown[]): void {
-    this.internalLogger.info(`${this.name}\n`, ...args);
+    this.internalLogger.info(`${this.name}\n`, JSON.stringify(args));
   }
 
   logWarn(...args: unknown[]): void {
-    this.internalLogger.warn(`${this.name}\n`, ...args);
+    this.internalLogger.warn(`${this.name}\n`, JSON.stringify(args));
   }
 
   logError(...args: unknown[]): void {
-    this.internalLogger.error(`${this.name}\n`, ...args);
+    this.internalLogger.error(`${this.name}\n`, JSON.stringify(args));
   }
 }
